@@ -20,8 +20,8 @@ var acorn = require('acorn');
 var bfs   = require('acorn-bfs');
 
 var ast = acorn.parse('function test() {\n' +
-'  return true;\n'+
-}\n');
+'  return true;\n' +
+'}\n');
 
 bfs(ast).map(function(node) {
   return node.type;

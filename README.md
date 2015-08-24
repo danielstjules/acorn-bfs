@@ -2,6 +2,8 @@
 
 Breadth-first search traversal of an acorn-generated AST.
 
+[![Build Status](https://travis-ci.org/danielstjules/acorn-bfs.svg?branch=master)](https://travis-ci.org/danielstjules/acorn-bfs)
+
 ``` javascript
 /**
  * Returns an array of nodes in the passed AST, traversed using BFS. Accepts an

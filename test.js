@@ -10,8 +10,8 @@ describe('acorn-bfs', function() {
       return node.type;
     });
 
-    expect(types).to.eql(['Program', 'FunctionDeclaration', 'BlockStatement',
-      'ReturnStatement', 'Literal']);
+    expect(types).to.eql(['Program', 'FunctionDeclaration', 'Identifier',
+      'BlockStatement', 'ReturnStatement', 'Literal']);
   });
 
   it('does not exceed the max number of nodes, if set', function() {

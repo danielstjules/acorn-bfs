@@ -1,6 +1,6 @@
 {
   "name": "acorn-bfs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Breadth-first search traversal of an acorn-generated AST.",
   "main": "index.js",
   "scripts": {

@@ -86,6 +86,7 @@ function getChildren(node) {
           res.push(node.params[i]);
         }
       }
+      if (node.id) res.push(node.id);
       if (node.body) res.push(node.body);
       return res;
 

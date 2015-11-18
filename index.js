@@ -53,8 +53,10 @@ function getChildren(node) {
     case 'ScopeBody':
     case 'Identifier':
     case 'Literal':
-    case 'ExportDeclaration':
-    case 'ImportDeclaration':
+    case 'ExportNamedDeclaration':
+    case 'ExportDefaultDeclaration':
+    case 'ImportDefaultSpecifier':
+    case 'ImportNamespaceSpecifier':
       return [];
 
     case 'Program':

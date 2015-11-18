@@ -42,6 +42,8 @@ function getChildren(node) {
   switch (node.type) {
     case 'Expression':
     case 'ThisExpression':
+    case 'Super':
+    case 'MetaProperty':
     case 'Statement':
     case 'BreakStatement':
     case 'ContinueStatement':

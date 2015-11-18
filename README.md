@@ -1,6 +1,8 @@
 # acorn-bfs
 
-Breadth-first search traversal of an acorn-generated AST.
+Breadth-first search traversal of an acorn-generated AST, updated to include
+traversal of additional nodes, literals, etc. See
+https://github.com/ternjs/acorn/issues/166
 
 [![Build Status](https://travis-ci.org/danielstjules/acorn-bfs.svg?branch=master)](https://travis-ci.org/danielstjules/acorn-bfs)
 

@@ -209,6 +209,7 @@ function getChildren(node) {
     case 'ClassExpression':
       res = [];
       if (node.superClass) res.push(node.superClass);
+      if (node.id) res.push(node.id);
       if (!node.body.body) return res;
       for (i = 0; i < node.body.body.length; i++) {
         res.push(node.body.body[i]);

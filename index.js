@@ -57,6 +57,8 @@ function getChildren(node) {
     case 'ExportDefaultDeclaration':
     case 'ImportDefaultSpecifier':
     case 'ImportNamespaceSpecifier':
+    case 'VariablePattern':
+    case 'MemberPattern':
       return [];
 
     case 'Program':
@@ -76,6 +78,7 @@ function getChildren(node) {
       if (node.alternate) res.push(node.alternate);
       return res;
 
+    case 'Function':
     case 'ArrowFunctionExpression':
     case 'FunctionExpression':
     case 'FunctionDeclaration':
@@ -137,12 +140,10 @@ function getChildren(node) {
       res = [];
       for (i = 0; i < node.declarations.length; i++) {
         temp = node.declarations[i];
+        if (temp.id) res.push(temp.id);
         if (temp.init) res.push(temp.init);
       }
       return res;
-
-    case 'Function':
-      return (node.body) ? [node.body] : [];
 
     case 'ArrayExpression':
     case 'ArrayPattern':
@@ -175,6 +176,7 @@ function getChildren(node) {
 
     case 'BinaryExpression':
     case 'AssignmentExpression':
+    case 'AssignmentPattern':
     case 'LogicalExpression':
       return [node.left, node.right];
 

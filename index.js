@@ -53,8 +53,6 @@ function getChildren(node) {
     case 'ScopeBody':
     case 'Identifier':
     case 'Literal':
-    case 'ExportNamedDeclaration':
-    case 'ExportDefaultDeclaration':
     case 'ImportDefaultSpecifier':
     case 'ImportNamespaceSpecifier':
     case 'VariablePattern':
@@ -116,7 +114,10 @@ function getChildren(node) {
 
     case 'TryStatement':
       res = [node.block];
-      if (node.handler) res.push(node.handler.body);
+      if (node.handler) {
+        if (node.handler.param) res.push(node.handler.param);
+        if (node.handler.body) res.push(node.handler.body);
+      }
       if (node.finalizer) res.push(node.finalizer);
       return res;
 
@@ -230,6 +231,10 @@ function getChildren(node) {
 
     case 'RestElement':
       return (node.argument) ? [node.argument] : [];
+
+    case 'ExportNamedDeclaration':
+    case 'ExportDefaultDeclaration':
+      return (node.declaration) ? [node.declaration] : [];
 
     default:
       return [];

@@ -235,7 +235,21 @@ function getChildren(node) {
 
     case 'ExportNamedDeclaration':
     case 'ExportDefaultDeclaration':
-      return (node.declaration) ? [node.declaration] : [];
+    case 'ExportAllDeclaration':
+      res = [];
+      if (node.source) res.push(node.source);
+      if (node.declaration) res.push(node.declaration);
+      return res;
+
+    case 'ImportDeclaration':
+      res = [];
+      if (node.specifiers) {
+        for (i = 0; i < node.specifiers.length; i++) {
+          res.push(node.specifiers[i]);
+        }
+      }
+      if (node.source) res.push(node.source);
+      return res;
 
     default:
       return [];

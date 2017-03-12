@@ -1,19 +1,5 @@
 # acorn-bfs
 
-Breadth-first search traversal of an acorn-generated AST, updated to include
-traversal of additional nodes, literals, etc. See
-https://github.com/ternjs/acorn/issues/166
-
-[![Build Status](https://travis-ci.org/danielstjules/acorn-bfs.svg?branch=master)](https://travis-ci.org/danielstjules/acorn-bfs)
-
-#### Installation
-
-```
-npm install --save acorn-bfs
-```
-
-#### Overview
-
 ``` javascript
 /**
  * Returns an array of nodes in the passed AST, traversed using BFS. Accepts an
@@ -23,6 +9,14 @@ npm install --save acorn-bfs
  * @param {Node} node The root node of the AST to traverse
  * @param {int}  [n]  Optional max number of nodes to return
  */
+```
+
+[![Build Status](https://travis-ci.org/danielstjules/acorn-bfs.svg?branch=master)](https://travis-ci.org/danielstjules/acorn-bfs)
+
+#### Installation
+
+```
+npm install --save acorn-bfs
 ```
 
 #### Example
